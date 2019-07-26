@@ -63,10 +63,15 @@ def myfunc(request):
 
 
 	
-	# elif request.method == 'PUT':			
-	# 	id1 = json.loads(request.body)
-	# 	query = details.objects.filter(id=id1['id']).update(fname="Narendra",lname="modi",id=3)
-	# 	return HttpResponse("put se update hua hai")
+	elif request.method == 'PUT':			
+		id1 = json.loads(request.body)
+		# query = details.objects.filter(username=id1['username']).update(fname=id1['fname'])
+
+		query=user.objects.filter(username=id1['username']).values('link')
+		print(query)
+		q2=details.objects.filter(id=query[0]['link']).update(fname=id1['fname'])
+
+		return HttpResponse("put se update hua hai")
 
 	# elif request.method == 'DELETE':			
 	# 	id1 = json.loads(request.body)
