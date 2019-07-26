@@ -24,9 +24,10 @@ def myfunc(request):
 
 		for x in obj:
 			if(x.username==data['username'] and x.password==data['password']):
-				d=user.objects.filter(username=data['username']).values('link')
-				data2=details.objects.filter(id=d[0]['link']).values('fname','lname','address','city','state','zip1','board','qualified','mobileno','email','gender')
-				return JsonResponse(list(data2), safe=False)
+				d=user.objects.filter(username=data['username']).values('link__fname','link__lname','link__address','link__city','link__state','link__zip1','link__board','link__qualified','link__mobileno','link__email','link__gender')
+				# data2=details.objects.filter(id=d[0]['link']).values('fname','lname','address','city','state','zip1','board','qualified','mobileno','email','gender')
+				return JsonResponse(list(d), safe=False)
+
 
 			elif(x.username==data['username'] and x.password!=data['password']):
 				data3={"pass":"wrong"}
