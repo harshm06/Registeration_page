@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>
+        Admin all records
+    </title>
+
+
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <table border="2px" align="center" id="myTable">
+
+
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Mobile Number</th>
+            <th>Email</th>
+            <th>Qualified</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Zip</th>
+            <th>Board</th>
+            <th>Gender</th>
+        </tr>
+
+
+    </table>
+
+    <script>
+        var xmlhttp = new XMLHttpRequest();
+        var data;
+        var i;
+
+
+        xmlhttp.onreadystatechange = function() {
+
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+
+                data = JSON.parse(xmlhttp.response);
+
+
+                for (i = 0; i < data.length; i++) {
+
+                    var table = document.getElementById("myTable");
+
+                    var row = table.insertRow(i + 1);
+
+                    var cell1 = row.insertCell(0);
+                    var cell2 = row.insertCell(1);
+                    var cell3 = row.insertCell(2);
+                    var cell4 = row.insertCell(3);
+                    var cell5 = row.insertCell(4);
+                    var cell6 = row.insertCell(5);
+                    var cell7 = row.insertCell(6);
+                    var cell8 = row.insertCell(7);
+                    var cell9 = row.insertCell(8);
+                    var cell10 = row.insertCell(9);
+                    var cell11 = row.insertCell(10);
+
+                    cell1.innerHTML = data[i].fname;
+                    cell2.innerHTML = data[i].lname;
+                    cell3.innerHTML = data[i].mobileno;
+                    cell4.innerHTML = data[i].email;
+                    cell5.innerHTML = data[i].qualified;
+                    cell6.innerHTML = data[i].address;
+                    cell7.innerHTML = data[i].city;
+                    cell8.innerHTML = data[i].state;
+                    cell9.innerHTML = data[i].zip1;
+                    cell10.innerHTML = data[i].board;
+                    cell11.innerHTML = data[i].gender;
+
+                }
+
+            }
+
+        }
+        xmlhttp.open("GET", "http://127.0.0.1:8000/test/data/", true);
+        xmlhttp.send();
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,251 @@
+body {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: 740px;
+    background-color: darkorchid !important;
+
+}
+
+label {
+    color: black;
+    font-size: 19px;
+}
+
+.heading {
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 3px 3px 5px #000000;
+    font-family: serif;
+    font-weight: 800;
+    font-size: 50px !important;
+}
+
+
+.header,
+.marketing,
+.footer {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+
+.header {
+    border-bottom: 1px solid;
+}
+
+
+.header h3 {
+    padding-bottom: 19px;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+}
+
+
+.footer {
+    padding-top: 19px;
+    color: #777;
+    border-top: 1px solid;
+}
+
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 730px;
+        
+        border-radius: 35px;
+        background-color: burlywood;
+        padding: 18px;
+    }
+}
+
+
+.container-narrow > hr {
+    margin: 30px 0;
+}
+
+
+
+.jumbotron {
+    text-align: center;
+    border-bottom: 1px solid;
+}
+
+.jumbotron .btn {
+    padding: 14px 24px;
+    font-size: 21px;
+}
+
+
+
+.marketing {
+    margin: 40px 0;
+}
+
+
+.marketing p + h4 {
+    margin-top: 28px;
+}
+
+
+@media screen and (min-width: 768px) {
+
+    .header,
+    .marketing,
+    .footer {
+        padding-right: 0;
+        padding-left: 0;
+
+    }
+
+    .header {
+        margin-bottom: 30px;
+    }
+
+    .jumbotron {
+        border-bottom: 0;
+    }
+}
+
+
+input[type=number] {
+    padding: 4px;
+    border-radius: 10px;
+    background-color: #eeeeee
+}
+
+input[type=number]:hover {
+    background-color: azure
+}
+
+input[type=number]:active {
+    background-color: bisque
+}
+
+
+
+input[type=text] {
+    padding: 4px;
+    border-radius: 10px;
+    background-color: #eeeeee
+}
+
+input[type=text]:hover {
+    background-color: azure
+}
+
+input[type=text]:active {
+    background-color: bisque
+}
+
+
+
+input[type=password] {
+    padding: 4px;
+    border-radius: 10px;
+    background-color: #eeeeee
+}
+
+input[type=password]:hover {
+    background-color: azure
+}
+
+input[type=password]:active {
+    background-color: bisque
+}
+
+
+
+input[type=email]:hover {
+    background-color: azure
+}
+
+input[type=email]:active {
+    background-color: bisque
+}
+
+
+input[type=email] {
+    padding: 4px;
+    border-radius: 10px;
+    background-color: #eeeeee
+}
+
+
+
+#Dem {
+
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#Dem:hover {
+
+    background-color: azure;
+    color: black;
+}
+
+#Dem:active {
+
+    background-color: bisque;
+}
+
+
+
+#add {
+    padding: 4px;
+    border-radius: 10px;
+    background-color: #eeeeee;
+}
+
+#add:hover {
+    background-color: azure;
+}
+
+#add:active {
+
+    background-color: bisque;
+}
+
+
+
+.hm {
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 3px 3px 5px #000000;
+    font-family: serif;
+    font-size: 25px;
+}
+
+
+.buttonhm {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 50px;
+}
+
+
+.buttonhm:hover {
+
+    background-color: aliceblue;
+    color: black;
+}
+
+/*harsh mishra*/
+
+/*ab aur change*/
+
+
+/*new*/
+
+/*one two three*/
+
+/*kkkk*/

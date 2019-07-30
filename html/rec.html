@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title> SHOW</title>
+
+    <meta charset="UTF-8">
+
+    <script type="text/javascript" src="next.js"></script>
+
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+    </style>
+
+
+</head>
+
+<body>
+
+
+    <table border="2px" align="center">
+
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Mobile Number</th>
+            <th>Email</th>
+            <th>Qualified</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Zip</th>
+            <th>Board</th>
+            <th>Gender</th>
+        </tr>
+
+
+        <tr>
+            <td id="fname"> </td>
+            <td id="lname"></td>
+            <td id="mobileno"></td>
+            <td id="email"></td>
+            <td id="qualified"></td>
+            <td id="address"></td>
+            <td id="city"></td>
+            <td id="state"></td>
+            <td id="zip"></td>
+            <td id="board"></td>
+            <td id="gender"></td>
+        </tr>
+
+
+    </table>
+
+
+    <script>
+        
+        function display() {
+
+            var user, pass;
+
+            var user = localStorage.getItem("mytext");
+            var pass = localStorage.getItem("mytext1");
+
+
+            localStorage.removeItem("mytext");
+            localStorage.removeItem("mytext1");
+
+            
+            if (user == "admin" && pass == 12345)
+            {
+                window.location.href = "/home/harsh/Desktop/html/disp.html";
+                return;
+            }
+
+
+            var j = {
+                "username": user,
+                "password": pass
+            };
+
+            var s = JSON.stringify(j);
+
+
+            request(s);
+
+
+
+        }
+
+        function request(a) {
+
+
+
+            var xmlhttp = new XMLHttpRequest();
+            var data;   
+
+
+            xmlhttp.onreadystatechange = function() {
+
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+
+                    data = JSON.parse(xmlhttp.response);
+
+                    if (data.pass == "wrong") 
+                    {
+                        alert("Wrong Password!!");
+                        window.location.href = "/home/harsh/Desktop/html/login.html";
+                    } 
+                    
+                    
+                    else if (data.username == "invalid")
+                    {
+                        alert("Invalid Username");
+                        window.location.href = "/home/harsh/Desktop/html/login.html";
+
+                    }
+                    
+                    
+                    else if (data[0].link__fname) 
+                    {
+
+                        document.getElementById("fname").innerHTML = data[0].link__fname;
+                        document.getElementById("lname").innerHTML = data[0].link__lname;
+                        document.getElementById("mobileno").innerHTML = data[0].link__mobileno;
+                        document.getElementById("email").innerHTML = data[0].link__email;
+                        document.getElementById("qualified").innerHTML = data[0].link__qualified;
+                        document.getElementById("address").innerHTML = data[0].link__address;
+                        document.getElementById("city").innerHTML = data[0].link__city;
+                        document.getElementById("state").innerHTML = data[0].link__state;
+                        document.getElementById("zip").innerHTML = data[0].link__zip1;
+                        document.getElementById("board").innerHTML = data[0].link__board;
+                        document.getElementById("gender").innerHTML = data[0].link__gender;
+
+                    }
+
+                }
+            }
+
+            xmlhttp.open("POST", "http://127.0.0.1:8000/test/data/", true);
+            xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xmlhttp.send(a);
+
+        }
+
+        display();
+
+    </script>
+
+</body>
+
+</html>
