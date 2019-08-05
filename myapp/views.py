@@ -76,7 +76,7 @@ def myfunc(request):
 	# elif request.method == 'DELETE':			
 	# 	id1 = json.loads(request.body)
 	# 	query = details.objects.filter(id=id1['id']).delete()
-	# 	return HttpResponse("gaya")
+	# 	return HttpResponse("gaya")	
 
 
 def home_page(request):

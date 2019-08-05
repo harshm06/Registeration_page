@@ -64,21 +64,21 @@ function request(a) {
             if (data.status1 == "ok")
             {
                 alert('RECORD INSERTED');
-                window.location.href = "/home/harsh/Desktop/html/login.html";
+                window.location.href = "/home/harsh/Desktop/website/html/login.html";
             } 
             
             
             else if (data.pass == "wrong") 
             {
                 alert("User already exists!!                                                                  Please scroll down and find the Login button.                   But password is wrong.");
-                window.location.href = "/home/harsh/Desktop/html/login.html";
+                window.location.href = "/home/harsh/Desktop/website/html/login.html";
             } 
             
             
             else if (data[0].link__fname) 
             {
                 alert("User already exists!!                                                                  Please scroll down and find the Login button.");
-                window.location.href = "/home/harsh/Desktop/html/login.html";
+                window.location.href = "/home/harsh/Desktop/website/html/login.html";
             }
 
         }
